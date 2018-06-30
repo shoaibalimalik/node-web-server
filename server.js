@@ -32,9 +32,9 @@ app.use(  (req , res , next) => {
     next();
 });
 
-app.use(  (req , res , next) => {
+/*app.use(  (req , res , next) => {
      res.render('test.hbs');
-});
+});*/
 
 app.use(express.static(__dirname + '/public'));
 
@@ -64,6 +64,13 @@ app.get('/about' , (req , res) => {
          /*currentYear: (new Date).getFullYear()*/
      });
     // res.send('About US Page Works'); 
+});
+
+app.get('/projects' , (req , res) => {
+     res.render('projects.hbs', {
+         pageTitle: 'Portfolio Page',
+         userName: 'Fahad'
+     });
 });
 
 app.get('/bad' , (req , res) => {
